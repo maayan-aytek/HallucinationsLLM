@@ -42,13 +42,18 @@ def extract_logits(processor, image_url, generated_description, min_prob=1e-3):
     generated_text = ''.join([x for x, _ in generated_scores])
     if len(str(generated_scores)) > 32767:
         print("Over excel limit:", image_url)
+    print(str(generated_scores))
     return str(generated_scores)
 
 
-import pandas as pd 
-df = pd.read_excel(f'/home/student/HallucinationsLLM/result_data1.xlsx', index_col=0)
-df['logits'] = df.apply(lambda row: extract_logits(processor, row['image_link'], row['description']), axis=1)
-df.to_excel('team5_final_data.xlsx')
+# import pandas as pd 
+# df = pd.read_excel(f'/home/student/HallucinationsLLM/result_data1.xlsx', index_col=0)
+# df['logits'] = df.apply(lambda row: extract_logits(processor, row['image_link'], row['description']), axis=1)
+# df.to_excel('team5_final_data.xlsx')
 # image_url = df.iloc[0]['image_link']
 # generated_description = df.iloc[0]['description']
 # generated_text, generated_scores = extract_logits(processor, image_url, generated_description, min_prob=1e-3)
+
+import pandas as pd 
+df = pd.read_excel(f'/home/student/HallucinationsLLM/data/team5_clean_dataset.xlsx', index_col=0)
+print(df.iloc[[64]].apply(lambda row: extract_logits(processor, row['image_link'], row['description']), axis=1))
