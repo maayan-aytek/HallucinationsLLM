@@ -1,0 +1,14 @@
+pandas 
+numpy 
+seaborn 
+torch
+torchvision
+torchaudio
+transformers==4.37.2
+bitsandbytes==0.41.3
+accelerate==0.25.0
+scipy
+tqdm
+openpyxl
+nltk
+scikit-learn
