@@ -12,3 +12,9 @@ tqdm
 openpyxl
 nltk
 scikit-learn
+xgboost 
+opencv-python
+scikit-image
+imutils
+pybrisque 
+ultralytics

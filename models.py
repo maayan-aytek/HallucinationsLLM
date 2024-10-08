@@ -5,6 +5,7 @@ from sklearn.model_selection import train_test_split
 from sklearn.ensemble import RandomForestClassifier
 from catboost import CatBoostClassifier
 import xgboost as xgb
+from utils import feature_to_target_corr
 from sklearn.metrics import classification_report, accuracy_score, confusion_matrix, roc_auc_score, precision_recall_fscore_support
 
 # Load the dataset
@@ -15,11 +16,21 @@ sentences_df['contains_CD'] = sentences_df['sentence_POS'].apply(lambda x: 'CD' 
 sentences_df['contains_NNS'] = sentences_df['sentence_POS'].apply(lambda x: 'NNS' in x).astype(int)
 sentences_df['contains_JJR'] = sentences_df['sentence_POS'].apply(lambda x: 'JJR' in x).astype(int)
 # Feature set and labels
-FEATURES = ['sentence_normalized_index', 'sentence_contains_hedges', 'sentence_len', 'mean_pos_prob', 'max_pos_prob',
+FEATURES = ['sentence_normalized_index', 'sentence_contains_hedges', 'sentence_len', 'mean_pos_prob', 'max_pos_prob', 'min_pos_prob', 'median_pos_prob',
             'median_sentence_probes', 'mean_sentence_probes', 'min_sentence_probes', 'max_sentence_probes',
-            'contains_CD', 'contains_NNS', 'contains_JJR']
+            # ?
+            'median_sentence_entropy', 'mean_sentence_entropy', 'min_sentence_entropy', 'max_sentence_entropy',
+            'contains_CD', 'contains_NNS', 'contains_JJR', 'objects_num', 'mean_b', 'mean_g', 'mean_r', 'mean_rbg']
+
+# FEATURES = ['contains_CD', 'max_pos_prob', 'sentence_len', 'min_pos_prob', 'max_sentence_entropy', 'min_sentence_entropy', 'max_sentence_probes', 
+#             'mean_sentence_probes', 'min_sentence_probes', 'mean_pos_prob', 'median_sentence_probes', 'mean_sentence_entropy']
+
+FEATURES = ['sentence_normalized_index', 'sentence_contains_hedges', 'sentence_len', 'mean_pos_prob', 'max_pos_prob', 'min_pos_prob', 'median_pos_prob',
+            'median_sentence_probes', 'mean_sentence_probes', 'min_sentence_probes', 'max_sentence_probes', 'sentence_image_similarity'] #, 'objects_num']
 
 LABEL = 'sentences_labels'
+
+feature_to_target_corr(sentences_df, FEATURES, LABEL, save_path="correlation_plot.png")
 
 # Split the data into train and test sets
 X = sentences_df[FEATURES].astype(float)
