@@ -1,0 +1,96 @@
+[nltk_data] Downloading package punkt to /home/student/nltk_data...
+[nltk_data]   Package punkt is already up-to-date!
+[nltk_data] Downloading package averaged_perceptron_tagger to
+[nltk_data]     /home/student/nltk_data...
+[nltk_data]   Package averaged_perceptron_tagger is already up-to-
+[nltk_data]       date!
+[nltk_data] Downloading package stopwords to
+[nltk_data]     /home/student/nltk_data...
+[nltk_data]   Package stopwords is already up-to-date!
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+['EXPLICIT_FEATURE_ANNOTATION_PROMPT']
+{
+  "explanation": "The bird is drinking from a fountain, so it is not in the center of the frame and its head is not down.",
+  "classification": 1
+}
+{
+  "explanation": "While the sentence captures the general sentiment of the image, the word \"atmosphere\" is used as an adverb (RB) with a very low probability (0.251). This is grammatically incorrect and suggests uncertainty in the description.",
+  "classification": 1
+}
+
+{
+  "explanation": "The image does show a few chickens, and while the other objects are baskets, not pots, the sentence describes them as \"possibly pots\" which allows for the fact that the objects could be misidentified. ",
+  "classification": 0
+}
+
+{
+  "explanation": "While some words show low probability, such as \"heartwarming\" and \"young,\" these are subjective descriptions and do not contradict the image. The objectively verifiable elements, like \"woman,\" \"child,\" and \"holding,\" align with the image.",
+  "classification": 0
+}
+
+{
+  "explanation": "The word 'makeshift' is a hallucination. While the tent is small, there is no indication that it is makeshift, and there is a standard tent visible in the background.",
+  "classification": 1
+}
+
+{
+  "explanation": "While the word probabilities for \"men\" and \"women\" are low, the image clearly shows both men and women in the group of people.",
+  "classification": 0
+}
+
+{
+  "explanation": "The sentence claims that the sandwiches are topped with meat, but the image shows that they are not. There is bacon in the image, but it is not on the sandwiches.",
+  "classification": 1
+}
+
+{
+  "explanation": "The sentence mentions \"one another's company\" which would imply they are interacting with each other, but this isn't explicitly clear from the image. However, it's not definitive enough to be a hallucination since they are indeed sitting together as a group.",
+  "classification": 0
+}
+{
+  "explanation": "The word \"back\" is incorrectly labeled as RB (adverb) when it should be NN (noun) in this context. Furthermore, several words like \"appears\", \"be\", \"the\", \"primary\" have extremely low probabilities, casting doubt on the sentence's accuracy. While the truck bed is a prominent part of the image, it doesn't conclusively represent the \"primary focus\" of the scene. The scene as a whole depicts a construction site with a truck being loaded, making \"primary focus\" subjective and not a definitive hallucination.",
+  "classification": 0
+}
+
+{
+  "explanation": "While the image does depict athletic shoes, the sneakers are not red. Additionally, the phrase \"in the scene\" is somewhat awkward in this context.",
+  "classification": 1
+}
+
+{
+  "explanation": "The man is conducting a choir, not standing on a stage. Additionally, the word \"stage\" (NN, 0.006) has a very low probability, further suggesting inaccuracy.",
+  "classification": 1
+}
+
+{
+  "explanation": "Although some words have low probabilities, they are used correctly. The mountain's reflection is indeed visible in the lake's water.",
+  "classification": 0
+}
+
+{
+  "explanation": "The sentence claims \"One of the women has a baby in her arm,\" but the image shows four women, one of whom is holding a baby. Therefore, the sentence contains a hallucination related to the number of women.",
+  "classification": 1
+}
+
+{
+  "explanation": "The sentence claims \"the lambs exhibit a predominantly white color\" while one of the three lambs has a notable amount of black fur. The low probability scores for \"lambs\" (0.0008) and \"some\" (0.0083) suggest the model might have struggled to accurately identify and describe the lambs.",
+  "classification": 1
+}
+
+{
+  "explanation": "The sentence claims that one person is wearing a tie. While the description of their attire being more formal tracks with their being the only one wearing a jacket, no one in this image is wearing a tie. Additionally, the use of \"sports\" as a plural noun and \"tie\" as a noun following \"a\" are unusual and have low probabilities.",
+  "classification": 1
+}
+
+Preds Frequency
+llm_descision
+1    508
+0    245
+Name: count, dtype: int64
+Actual Frequency
+sentences_labels
+0    399
+1    354
+Name: count, dtype: int64
+{'accuracy': 0.6254980079681275, 'precision': 0.6598380381735152, 'recall': 0.6254980079681275, 'f1_score': 0.6141737900611818}
+Finish Running!!!

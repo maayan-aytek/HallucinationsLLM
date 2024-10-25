@@ -1,0 +1,82 @@
+[nltk_data] Downloading package punkt to /home/student/nltk_data...
+[nltk_data]   Package punkt is already up-to-date!
+[nltk_data] Downloading package averaged_perceptron_tagger to
+[nltk_data]     /home/student/nltk_data...
+[nltk_data]   Package averaged_perceptron_tagger is already up-to-
+[nltk_data]       date!
+[nltk_data] Downloading package stopwords to
+[nltk_data]     /home/student/nltk_data...
+[nltk_data]   Package stopwords is already up-to-date!
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+['RISK_WORD_IDENTIFICATION_CLEAN_PROMPT', 'RISK_CLASSIFICATION_PROMPT']
+The boat is heading towards a mountainous region, passing by a *stunning* mountain range on one side and a *cityscape* on the other 
+
+It appears to be enjoying the water as it dips its *beak* 
+
+It appears that the dog's owner is among the *group*, and they are all standing around the dog, enjoying their time together. 
+
+The image shows a *young* girl happily playing with her *yellow* *frisbee* 
+
+In the background, there is a *large* *white* structure, likely a *church*, overlooking the body of water 
+
+As the *people* work, a *dog* is present in the scene, possibly assisting or observing the proceedings 
+
+The excitement and pride of the *Brazilian* fans can be felt as they share in the joyous experience of cheering for their *country* 
+
+Both the woman and the *baby* are wearing *hats*, adding to the cozy atmosphere 
+
+The image captures a *group* of *men* playing *soccer* on a field 
+
+He is enjoying a *cigarette* in front of a pit, smoke rising from it
+The person is also wearing *rings* on their finger and seems to enjoy playing the keyboard 
+
+A *man* in the center of the group is performing a *skilled* leap onto the pier, while the others are watching with excitement 
+
+The *powerful* *rocket* creates a *smoke* trail as it ascends into the air 
+
+*One* sandwich is near the top-left, another is near the bottom-left, and the *third* one is centrally placed on the tray 
+
+In addition to these items, there are *more pens* and *a book* nearby, providing evidence of her workspace environment
+In the surrounding area, there is *an* *umbrella* close to the group, which might be their source of shade or a place where they can sit near each other
+
+A *few* bowls, *cups*, and *vases* accompany the *fishbowls* and apples, creating an appealing and colorful setup
+
+An image of *three* women is being showcased 
+
+The armor is decorated with *decorative* details along its *edges*, enhancing its old-world charm. 
+
+The scene takes place on what appears to be a *black* background, possibly indicating that this is a promotional or photography shoot 
+
+The bathroom is predominantly *green* and covered in *several* layers of *old* wallpaper 
+
+He can be seen wearing *glasses* and pointing towards the choir members 
+
+The woman appears to be the *baby*'s mother, and both of them can be seen prominently in the scene 
+
+There are *several* people scattered around the *lake*, appreciating the breathtaking view 
+
+500 An internal error has occurred. Please retry or report in https://developers.generativeai.google/guide/troubleshooting
+*Both* individuals seem to be engaged in a conversation or debate 
+
+The scene appears to be a casual gathering of *healthcare workers* or *friends* in a setting that emphasizes safety and care 
+
+The *television* appears to be off and unrelated to the main focus of the image, which is the *woman* exploring the bookstore 
+
+The *entire* gathering appears to be outdoors, with a *wooden* fence or similar structure that provides shelter in the image 
+
+The street also has a *high* bridge above, providing a scenic view from above 
+
+The image features *two* large head-dresses with colorful designs. 
+
+Preds Frequency
+llm_descision
+1    408
+0    350
+Name: count, dtype: int64
+Actual Frequency
+sentences_labels
+0    400
+1    358
+Name: count, dtype: int64
+{'accuracy': 0.7387862796833773, 'precision': 0.7448874008706384, 'recall': 0.7387862796833773, 'f1_score': 0.7386044076413814}
+Finish Running!!!

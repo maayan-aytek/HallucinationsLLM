@@ -112,12 +112,12 @@ def hallucinations_tagging_with_pos(description, logits, words_logits_mapping, P
 
 
 if __name__ == "__main__":
-    path = "/home/student/HallucinationsLLM/data/team5_clean_dataset.xlsx"
-    df = prepare_data(path)
-    df[['sentences_preds', 'sentences_preds_indices']] = df.apply(lambda row: hallucinations_tagging(row['description'], row['logits'], row['words_logits_mapping'], row['POS'],
-                                                                                                    STOP_WORDS, agg='median', sample_seq=True), axis=1)
+    # path = "/home/student/HallucinationsLLM/data/team5_clean_dataset.xlsx"
+    # df = prepare_data(path)
+    # df[['sentences_preds', 'sentences_preds_indices']] = df.apply(lambda row: hallucinations_tagging(row['description'], row['logits'], row['words_logits_mapping'], row['POS'],
+    #                                                                                                 STOP_WORDS, agg='median', sample_seq=True), axis=1)
 
-    sentences_df = df[['sentences_preds', 'sentences_labels']].explode(['sentences_preds', 'sentences_labels'])
+    # sentences_df = df[['sentences_preds', 'sentences_labels']].explode(['sentences_preds', 'sentences_labels'])
 
 
     # probes_aggs = ['median', 'mean']
@@ -144,8 +144,9 @@ if __name__ == "__main__":
     # print(results_dict)
     # with open('results_dict.pickle', 'wb') as f:
     #     pickle.dump(results_dict, f)
-    evaluate_hals_preds(sentences_df['sentences_preds'].tolist(), sentences_df['sentences_labels'].tolist())
+    # evaluate_hals_preds(sentences_df['sentences_preds'].tolist(), sentences_df['sentences_labels'].tolist())
 
-    # with open('results_dict.pickle', 'rb') as f:
-    #     loaded_dict = pickle.load(f)
+    with open('backup/results_dict.pickle', 'rb') as f:
+        loaded_dict = pickle.load(f)
+    print(loaded_dict)
     # a = 2

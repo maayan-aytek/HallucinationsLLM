@@ -133,9 +133,9 @@ def get_pos_by_sentence(description, pos_mapping):
     counter = 0 
     for sentence in sentences:
         words = sentence.split()
-        sentence_pos = set()
+        sentence_pos = []
         for j, word in enumerate(words):
-            sentence_pos.add(pos_mapping[j + counter][POS])
+            sentence_pos.append(pos_mapping[j + counter][POS])
             assert word.strip() == pos_mapping[j + counter][WORD], f"Unmatching words in POS: {word.strip()}, {pos_mapping[j + counter][WORD]}"
         sentences_pos.append(list(sentence_pos))
         counter += len(words)   
@@ -241,7 +241,8 @@ def prepare_data(data_path):
     df['objects_num'] = df['image_link'].apply(extract_object_num)
     df['words_logits_mapping'] = df.apply(lambda row: map_words_logits(row['logits'], row['description']), axis=1)
     df['POS'] = df['words_logits_mapping'].apply(lambda words_logits_mapping: get_pos_tags(words_logits_mapping))
-    df['sentence_POS'] = df.apply(lambda row: get_pos_by_sentence(row['description'], row['POS']), axis=1)
+    df['sentence_POS_list'] = df.apply(lambda row: get_pos_by_sentence(row['description'], row['POS']), axis=1)
+    df['sentence_POS'] = df['sentence_POS_list'].apply(lambda list_of_lists: [set(lst) for lst in list_of_lists])
     df['sentence_probes'] = df.apply(lambda row: get_probes_by_sentence(row['description'], row['words_logits_mapping'], row['logits']), axis=1)
     df['sentence_entropy'] = df.apply(lambda row: get_entropy_by_sentence(row['description'], row['words_logits_mapping'], row['logits']), axis=1)
     df['sentence_normalized_index'] = df['hallucinations'].apply(sentence_normalized_index)
@@ -281,12 +282,19 @@ def prepare_sentences_df(data_path):
     sentences_df['max_pos_prob'] = sentences_df['sentence_POS'].apply(max_pos_prob)
     sentences_df['median_pos_prob'] = sentences_df['sentence_POS'].apply(median_pos_prob)
 
+    sentences_df['contains_CD'] = sentences_df['sentence_POS'].apply(lambda x: 'CD' in x).astype(int)
+    sentences_df['contains_NNS'] = sentences_df['sentence_POS'].apply(lambda x: 'NNS' in x).astype(int)
+    sentences_df['contains_JJR'] = sentences_df['sentence_POS'].apply(lambda x: 'JJR' in x).astype(int)
+
     # CLIP 
     sentences_df['sentence_embedding'] = sentences_df['sentence'].apply(sentence_embedding)
     sentences_df['sentence_image_similarity'] = sentences_df.apply(lambda row: sentence_image_similarity(row['image_embedding'], row['sentence_embedding']), axis=1)
 
-    sentences_df.to_pickle('sentences_df_clip-vit-large-patch14.pkl')
+    sentences_df.to_pickle('sentences_df_v2.pkl')
     return sentences_df
 
 
 
+if __name__ == "__main__":
+    data_path = "/home/student/HallucinationsLLM/data/team5_clean_dataset.xlsx"
+    prepare_sentences_df(data_path)

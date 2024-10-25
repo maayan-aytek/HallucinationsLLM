@@ -9,7 +9,8 @@ import seaborn as sns
 import matplotlib.pyplot as plt
 from scipy.stats import pointbiserialr
 from scipy.stats.contingency import association
-from sklearn.metrics import accuracy_score, precision_recall_fscore_support, confusion_matrix
+from sklearn.model_selection import train_test_split
+from sklearn.metrics import accuracy_score, precision_recall_fscore_support, confusion_matrix, roc_auc_score
 
 nltk.download('punkt')
 nltk.download('averaged_perceptron_tagger')
@@ -26,6 +27,7 @@ def prepare_stopwords_set():
 def evaluate_hals_preds(preds, labels, plot=True):
     accuracy = accuracy_score(labels, preds)
     precision, recall, f1, _ = precision_recall_fscore_support(labels, preds, average='weighted')
+
     results = {
         'accuracy': accuracy,
         'precision': precision,
@@ -47,6 +49,24 @@ def evaluate_hals_preds(preds, labels, plot=True):
         plt.show()
         print(results)
     return results
+
+
+def train_and_eval(df, model_class, features, label):
+    X = df[features].astype(float)
+    y = df[label].astype(int)
+    
+    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+    data_split = {'x_train': X_train, 'y_train': y_train, 'x_test': X_test, 'y_test': y_test}
+    model = model_class()
+    model.fit(X_train, y_train)
+    y_pred = model.predict(X_test)
+
+    y_proba = model.predict_proba(X_test)[:, 1] 
+    roc_auc = roc_auc_score(y_test, y_proba)
+
+    results = evaluate_hals_preds(y_pred, y_test, plot=False)
+    results['ROC_AUC'] = roc_auc
+    return model, data_split, results
 
 
 def feature_to_target_corr(df, features, label, save_path):

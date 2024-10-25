@@ -7,9 +7,9 @@ INDICES = 1
 POS = 1
 
 RELEVANT_COLUMNS = ['image_link', 'description', 'hallucinations', 'logits', 'objects_num', 'words_logits_mapping', 'sentence', 'sentence_normalized_index', 'sentences_labels', 'sentences_preds', 
-                    'sentence_contains_hedges', 'sentence_POS', 'sentence_probes', 'sentence_entropy', 'mean_b', 'mean_g', 'mean_r', 'mean_rbg', 'sentence_image_similarity', 'image_embedding', 'sentence_embedding']
+                    'sentence_contains_hedges', 'sentence_POS', 'sentence_POS_list', 'sentence_probes', 'sentence_entropy', 'mean_b', 'mean_g', 'mean_r', 'mean_rbg', 'sentence_image_similarity', 'image_embedding', 'sentence_embedding']
 
-SENTENCE_COLUMNS = ['sentence_normalized_index', 'sentences_labels', 'sentences_preds', 'sentence', 'sentence_contains_hedges', 'sentence_POS', 'sentence_len', 'sentence_probes', 'sentence_entropy',
+SENTENCE_COLUMNS = ['sentence_normalized_index', 'sentences_labels', 'sentences_preds', 'sentence', 'sentence_contains_hedges', 'sentence_POS', 'sentence_POS_list', 'sentence_len', 'sentence_probes', 'sentence_entropy',
                     'sentence_image_similarity', 'sentence_embedding', 'sentence_image_similarity']
 
 LABEL = 'sentences_labels'

@@ -1,0 +1,84 @@
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+['EXPLICIT_FEATURE_WA_POS_ANNOTATION_PROMPT']
+{
+ "explanation": "The sentence claims the bird is positioned in the center of the frame, which is incorrect as the bird's head is closer to the left side of the frame. This is further supported by the low probabilities of the words \"in (0.0556)\", \"the (0.0422)\", \"center (0.4535)\" and \"of (0.1143)\".",
+ "classification": 1
+}
+{
+  "explanation": "While the image does showcase a woman pouring tea, which could be perceived as a cozy tea time setting, the word \"suggests\" has a very low probability score, indicating low model confidence in asserting that suggestion. It is subjective to call the scene cozy. Therefore, it's safer to classify the sentence as not hallucinating.",
+  "classification": 0
+}
+
+{
+  "explanation": "The image shows one chicken, not \"a few\". Additionally, the description of \"pots\" and \"other items\" is vague and doesn't clearly represent the baskets present. While the low probabilities suggest uncertainty, the sentence makes definitive but incorrect claims.",
+  "classification": 1
+}
+
+```json
+{
+  "explanation": "While \"heartwarming\" and \"showing affection and care\" are subjective interpretations, the remaining words in the sentence correctly describe the image. The low probability of words like \"In\" and \"this\" is likely due to their commonality at the start of sentences and doesn't necessarily indicate hallucination.",
+  "classification": 0
+}
+```
+{
+  "explanation": "The phrase \"makeshift tent\" is not appropriate. There are two commercially manufactured tents visible in the image. Additionally, many of the words have low probabilities, indicating significant uncertainty in the model's output.",
+  "classification": 1
+}
+
+{
+ "explanation": "The sentence is unclear about what group it is referring to, so we can't determine if the group includes both men and women. The image shows both men and women, so the sentence can be interpreted as correct.",
+ "classification": 0
+}
+{
+  "explanation": "The sentence contains several low-probability words that don't accurately reflect the image. The sandwiches are not in the middle of the plate and are not clearly topped with meat. Most of the low-probability words in the sentence are related to prepositional phrases, indicating uncertainty in the model's spatial understanding of the image.",
+  "classification": 1
+}
+
+{
+  "explanation": "The children in the image are sitting next to each other but are not demonstrably engaged with each other. The word 'look' has very low probability at 0.0837, suggesting uncertainty which is fair. Therefore, the sentence seems like a possible hallucination.",
+  "classification": 1
+}
+{
+ "explanation": "Although the sentence is unusual, the truck's back is in view and the truck is part of the scene. The low probability words (e.g. \"back\", \"be\", \"the\") make the sentence poorly written and awkward, but technically not a hallucination.",
+ "classification": 0
+}
+{
+ "explanation": "Although there are sneakers in the image, none of the visible shoes are primarily red. The word \"red\" has a low probability of 0.552.",
+ "classification": 1
+}
+{
+  "explanation": "The sentence claims the man is standing on a stage, but the image clearly shows him standing on the floor. The very low word probability of \"stage\" (0.006) supports that this word is likely a hallucination.",
+  "classification": 1
+}
+
+{
+ "explanation": "Although most of the sentence's words have high probabilities, the words \"reflection\" and \"visible\" have particularly low probabilities (0.1085 and 0.1907 respectively). Upon examining the image, it becomes clear that the mountain's reflection is not visible in the lake. Therefore, these words are hallucinations.",
+ "classification": 1
+}
+{
+  "explanation": "The sentence claims that only one of the women has a baby in her arms, but the image clearly shows that one woman is holding the baby while the other two women stand next to her.  Therefore, the sentence contains a hallucination.",
+  "classification": 1
+}
+
+{
+  "explanation": "While the sheep do display a range of colors, the assertion that \"some being more brown or gray, while the lambs exhibit a predominantly white color\" is not entirely accurate. One sheep is brown, and one is white and tan. The lambs are white.",
+  "classification": 1
+}
+
+{
+  "explanation": "The image shows a group of people but none are wearing ties. The sentence hallucinates the existence of a tie, which is contradicted by the image.",
+  "classification": 1
+}
+
+Preds Frequency
+llm_descision
+1    506
+0    246
+Name: count, dtype: int64
+Actual Frequency
+sentences_labels
+0    399
+1    353
+Name: count, dtype: int64
+{'accuracy': 0.6263297872340425, 'precision': 0.6606512585866334, 'recall': 0.6263297872340425, 'f1_score': 0.6152887262325328}
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------

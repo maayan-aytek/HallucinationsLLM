@@ -1,0 +1,93 @@
+
+[nltk_data] Downloading package punkt to /home/student/nltk_data...
+[nltk_data]   Package punkt is already up-to-date!
+[nltk_data] Downloading package averaged_perceptron_tagger to
+[nltk_data]     /home/student/nltk_data...
+[nltk_data]   Package averaged_perceptron_tagger is already up-to-
+[nltk_data]       date!
+[nltk_data] Downloading package stopwords to
+[nltk_data]     /home/student/nltk_data...
+[nltk_data]   Package stopwords is already up-to-date!
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+['LIST_SCORES_CLEAN_PROMPT']
+{
+  "explanation": "While the bird is drinking water, its head is not positioned in the center of the image frame.",
+  "classification": 1
+}
+
+{
+  "explanation": "The sentence is subjective in nature, and the image does depict a person pouring tea in what could be considered a cozy and inviting atmosphere.",
+  "classification": 0
+}
+
+{
+  "explanation": "There are numerous woven baskets in the image and only a single chicken.",
+  "classification": 1
+}
+
+{
+  "explanation": "The image shows a woman holding and playing with a
+{
+  "explanation": "The man is sitting outside two tents, one blue and one green and black.  Calling it a 'makeshift tent' is not entirely accurate.",
+  "classification": 1
+}
+
+{
+  "explanation": "The image shows a mix of men and women in the water and on the dock.",
+  "classification": 0
+}
+
+{
+ "explanation": "The statement that the sandwiches are \"topped with meat\" is incorrect, as the image clearly shows the sandwiches have avocado and possibly cheese as filling, but no meat.",
+ "classification": 1
+}
+
+{
+  "explanation": "The children appear to be interacting with each other and enjoying themselves, making \"engaged\" and \"content\" reasonable interpretations.",
+  "classification": 0
+}
+
+{
+  "explanation": "While the back of the truck is a prominent feature, the image does not solely focus on it. The scene captures a broader view of the truck and the excavator in a quarry.",
+  "classification": 1
+}
+
+{
+  "explanation": "The individuals in the image are wearing athletic shoes, not sneakers.",
+  "classification": 1
+}
+
+{
+ "explanation": "The sentence accurately describes the image as it shows a man dressed in a black suit, standing on a platform in front of a choir and appearing to conduct them.",
+ "classification": 0
+}
+{
+  "explanation": "The sentence accurately describes the scene. We can see the mountain's reflection in the lake's water, and the overall atmosphere appears serene.",
+  "classification": 0
+}
+
+{
+ "explanation": "There are four women in the image, not just a group of women where one is holding the baby and \"the others\" are engaged in conversation.  There are also not multiple conversations happening between the women.",
+ "classification": 1
+}
+{
+  "explanation": "The description accurately reflects the image. The adult sheep are indeed various shades of brown or gray, while the lambs are predominantly white.",
+  "classification": 0
+}
+
+{
+  "explanation": "None of the people in this image are wearing ties.",
+  "classification": 1
+}
+Preds Frequency
+llm_descision
+1    487
+0    263
+Name: count, dtype: int64
+Actual Frequency
+sentences_labels
+0    395
+1    355
+Name: count, dtype: int64
+{'accuracy': 0.6933333333333334, 'precision': 0.7259551898147787, 'recall': 0.6933333333333334, 'f1_score': 0.6866114596644743}
+Finsh Running!!!

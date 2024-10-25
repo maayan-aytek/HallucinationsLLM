@@ -14,7 +14,5 @@ nltk
 scikit-learn
 xgboost 
 opencv-python
-scikit-image
-imutils
-pybrisque 
-ultralytics
+google-generativeai==0.8.3
+
