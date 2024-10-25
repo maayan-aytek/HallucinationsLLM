@@ -12,7 +12,7 @@ from prompts import *
 import traceback
 import numpy as np
 
-API_KEY = "AIzaSyC3D99Of7M4bbTVo0DFyiQv-p85Iu24XdY"
+API_KEY = "PUBLIC KEY"
 genai.configure(api_key=API_KEY)
 model = genai.GenerativeModel('gemini-1.5-pro')
 counter = 1
